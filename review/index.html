@@ -11,7 +11,7 @@
 <meta property="og:description" content="legalVector reviews every contract against Legal’s playbook. A failing clause blocks approval until a lawyer records a reason.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="en_GB">
-<meta property="og:image" content="https://joaosoares-bit.github.io/legalvector-landings/review/og-v2.jpg?v=2">
+<meta property="og:image" content="https://joaosoares-bit.github.io/legalvector-landings/review/og-v3.jpg?v=3">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Contract review against your playbook · legalVector">
 <meta name="twitter:description" content="legalVector reviews every contract against Legal’s playbook. A failing clause blocks approval until a lawyer records a reason.">
-<meta name="twitter:image" content="https://joaosoares-bit.github.io/legalvector-landings/review/og-v2.jpg?v=2">
+<meta name="twitter:image" content="https://joaosoares-bit.github.io/legalvector-landings/review/og-v3.jpg?v=3">
 <meta property="og:url" content="https://joaosoares-bit.github.io/legalvector-landings/review/">
 <meta property="og:site_name" content="legalVector">
 <meta name="theme-color" content="#F6F4EF">
@@ -53,10 +53,10 @@ a{color:inherit}
 .hero{padding:96px 0 0;text-align:center;overflow-x:clip}
 h1{font-size:clamp(40px,6.4vw,82px);line-height:1.02;letter-spacing:-.045em;font-weight:700;max-width:15ch;margin:0 auto;text-wrap:balance}
 .del{position:relative;color:var(--strike);white-space:nowrap}
-.del::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.075em;background:var(--strike);border-radius:2px;transform-origin:left;transform:scaleX(0);animation:risca .55s .55s cubic-bezier(.65,0,.35,1) forwards}
-.ins{color:var(--teal);white-space:nowrap;display:inline-block;background:linear-gradient(transparent 82%,rgba(15,118,110,.18) 82%);clip-path:inset(0 100% 0 0);animation:escreve .7s 1.15s cubic-bezier(.65,0,.35,1) forwards}
-@keyframes risca{to{transform:scaleX(1)}}
-@keyframes escreve{to{clip-path:inset(0 0 0 0)}}
+.del::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.075em;background:var(--strike);border-radius:2px;transform-origin:left;transform:scaleX(0);animation:strike-in .55s .55s cubic-bezier(.65,0,.35,1) forwards}
+.ins{color:var(--teal);white-space:nowrap;display:inline-block;background:linear-gradient(transparent 82%,rgba(15,118,110,.18) 82%);clip-path:inset(0 100% 0 0);animation:write-in .7s 1.15s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes strike-in{to{transform:scaleX(1)}}
+@keyframes write-in{to{clip-path:inset(0 0 0 0)}}
 .sub{font-size:clamp(18px,1.8vw,21px);color:var(--ink2);max-width:40ch;margin:26px auto 34px;text-wrap:balance}
 .actions{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap}
 .note{margin-top:16px;font-size:14px;color:var(--ink2)}
