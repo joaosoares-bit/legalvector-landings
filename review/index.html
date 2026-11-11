@@ -223,6 +223,10 @@ html.no-motion .h1 del::after{transform:scaleX(1)}
 html.no-motion .h1 ins .p,html.no-motion .note{clip-path:none;transform:none}
 html.no-motion .clause del{color:var(--strike);text-decoration-color:var(--strike)}
 html.no-motion .clause ins{color:var(--ins);text-decoration-color:var(--ins)}
+.h1-mask{overflow:hidden;overflow:clip;padding:0 0 .08em 48px;margin-left:-48px}
+.h1-mask h1.h1{transition:transform var(--duration-enter) cubic-bezier(.2,.8,.2,1)}
+html:not(.opened) .h1-mask h1.h1{transform:translateY(110%)}
+html.no-motion .h1-mask h1.h1{transform:none}
 </style>
 </head>
 <body>
@@ -239,7 +243,7 @@ html.no-motion .clause ins{color:var(--ins);text-decoration-color:var(--ins)}
 <section class="hero" aria-labelledby="t-hero"><div class="w" style="width:auto">
   <p class="doc"><span>services-agreement-v2.docx</span><span>Track changes: <b>on</b></span><span>Reviewed against: Legal playbook</span></p>
   <div class="sc">
-    <h1 id="t-hero" class="h1 alt">The <del>unlimited</del> clause <ins><span class="p" style="--i:0">doesn’t</span> <span class="p" style="--i:1">get</span> <span class="p" style="--i:2">through</span></ins> without a lawyer.</h1>
+    <div class="h1-mask"><h1 id="t-hero" class="h1 alt">The <del>unlimited</del> clause <ins><span class="p" style="--i:0">doesn’t</span> <span class="p" style="--i:1">get</span> <span class="p" style="--i:2">through</span></ins> without a lawyer.</h1></div>
     <p class="lead">AI reviews every contract against your Legal playbook. If a clause fails, approval stays locked until a lawyer records why.</p>
     <div class="actions"><a class="cta-button" href="#request" data-cta="hero">Book a demo <i></i></a><a class="subtle" href="https://legal.texter.ai/legalVector-WhitePaper-EN.pdf" target="_blank" rel="noopener" data-event="white-paper">Still comparing? Read the white paper</a></div>
     <aside class="margin-note"><p class="note"><b>Comment · Head of Legal</b>Approving anyway takes a written reason. It stays on the request’s timeline.</p></aside>
