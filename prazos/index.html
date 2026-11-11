@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="pt-PT">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prazos de denúncia e renovações no calendário · legalVector</title>
+<meta name="description" content="legalVector lê do contrato o início, o fim, o pré-aviso e a renovação, e põe-nos no calendário do Jurídico. Sobre o Alfresco ou Doxis que já usa.">
+<meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://joaosoares-bit.github.io/legalvector-landings/prazos/">
+<meta property="og:title" content="Prazos de denúncia e renovações no calendário · legalVector">
+<meta property="og:description" content="legalVector lê do contrato o início, o fim, o pré-aviso e a renovação, e põe-nos no calendário do Jurídico. Sobre o Alfresco ou Doxis que já usa.">
+<meta property="og:image" content="https://joaosoares-bit.github.io/legalvector-landings/prazos/og.png">
+<meta property="og:url" content="https://joaosoares-bit.github.io/legalvector-landings/prazos/">
+<meta property="og:site_name" content="legalVector">
+<meta name="theme-color" content="#F6F4EF">
+<link rel="icon" href="../marca/legalvector-mark.svg?v=c874b181" type="image/svg+xml">
+<link rel="preload" href="../fontes/inter.woff2?v=3100e775" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:Inter;src:url(../fontes/inter.woff2?v=3100e775) format("woff2");font-weight:100 900;font-display:swap}
+@font-face{font-family:"Inter fb";src:local(Arial);size-adjust:107%;ascent-override:90%;descent-override:22%}
+:root{--papel:#F6F4EF;--papel2:#EFECE4;--tinta:#0E1A19;--tinta2:#3E4B49;--linha:#DDD8CC;--teal:#0F766E;--teal-esc:#0B5B55;--ambar:#F59E0B;--risco:#C2410C;--branco:#fff;--r:14px}
+*{box-sizing:border-box;margin:0;padding:0}
+[hidden]{display:none!important}
+html{overflow-x:clip;scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{overflow-x:clip;font-family:Inter,"Inter fb",system-ui,sans-serif;background:var(--papel);color:var(--tinta);font-size:17px;line-height:1.55;font-feature-settings:"ss01","cv11";touch-action:manipulation}
+img{display:block;max-width:100%;height:auto}
+a{color:inherit}
+.w{width:min(1160px,100% - 32px);margin-inline:auto}
+.salta{position:absolute;left:-999px;min-height:44px;display:inline-flex;align-items:center}.salta:focus{left:16px;top:12px;z-index:99;background:var(--tinta);color:#fff;padding:10px 14px;border-radius:8px}
+/* cabeçalho fixo com o CTA sempre à vista */
+.cab{position:sticky;top:0;z-index:20;background:rgba(246,244,239,.94);border-bottom:1px solid transparent;transition:border-color .3s}
+.cab.desceu{border-bottom-color:var(--linha)}
+.cab .w{display:flex;align-items:center;justify-content:space-between;height:64px}
+.marca{min-height:44px;display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:650;font-size:18px;letter-spacing:-.02em}
+.marca img{width:30px;height:30px}
+.marca b{color:var(--teal);font-weight:700}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:0 22px;border-radius:999px;background:var(--tinta);color:#fff;text-decoration:none;font-weight:600;font-size:16px;border:0;cursor:pointer;transition:transform .25s cubic-bezier(.2,.8,.2,1),background .25s}
+.btn:hover{background:var(--teal-esc);transform:translateY(-1px)}
+.btn svg{transition:transform .25s}.btn:hover svg{transform:translateX(3px)}
+.btn.pequeno{min-height:44px;padding:0 18px;font-size:15px}
+.lig{display:inline-flex;align-items:center;min-height:44px;font-size:15px;color:var(--tinta2);text-decoration:underline;text-underline-offset:4px}
+/* hero */
+.hero{padding:72px 0 0;text-align:center;overflow-x:clip}
+.olho{display:inline-flex;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--teal);background:#E3EFEC;border-radius:999px;padding:6px 14px;margin-bottom:28px}
+.olho i{width:7px;height:7px;border-radius:50%;background:var(--teal)}
+h1{font-size:clamp(40px,6.4vw,82px);line-height:1.02;letter-spacing:-.045em;font-weight:700;max-width:15ch;margin:0 auto;text-wrap:balance}
+.del{position:relative;color:var(--risco);white-space:nowrap}
+.del::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:.075em;background:var(--risco);border-radius:2px;transform-origin:left;transform:scaleX(0);animation:risca .55s .55s cubic-bezier(.65,0,.35,1) forwards}
+.ins{color:var(--teal);white-space:nowrap;display:inline-block;background:linear-gradient(transparent 82%,rgba(15,118,110,.18) 82%);clip-path:inset(0 100% 0 0);animation:escreve .7s 1.15s cubic-bezier(.65,0,.35,1) forwards}
+@keyframes risca{to{transform:scaleX(1)}}
+@keyframes escreve{to{clip-path:inset(0 0 0 0)}}
+.sub{font-size:clamp(18px,1.8vw,21px);color:var(--tinta2);max-width:40ch;margin:26px auto 34px;text-wrap:balance}
+.acoes{display:flex;gap:18px;align-items:center;justify-content:center;flex-wrap:wrap}
+.nota{margin-top:16px;font-size:14px;color:var(--tinta2)}
+/* palco do produto */
+.palco{margin-top:56px;position:relative}
+.palco::before{content:"";position:absolute;inset:18% -6% -2%;background:radial-gradient(60% 60% at 50% 40%,rgba(15,118,110,.16),transparent 70%);z-index:-1}
+.janela{border-radius:18px;background:#fff;border:1px solid var(--linha);box-shadow:0 1px 0 rgba(14,26,25,.04),0 30px 80px -30px rgba(14,26,25,.35);overflow:hidden;transform:perspective(1600px) rotateX(6deg) translateY(10px);transition:transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.janela.viu{transform:none}
+.janela .barra{height:34px;display:flex;align-items:center;gap:7px;padding:0 14px;border-bottom:1px solid #EEE}
+.janela .barra i{width:10px;height:10px;border-radius:50%;background:#E4E0D6}
+.janela .barra span{margin-left:12px;font-size:12px;color:#8a938f}
+.selo.tel{width:min(210px,22%);border-radius:26px;border:6px solid var(--tinta);bottom:-40px;right:-10px}
+.selo{position:absolute;right:-14px;bottom:-26px;width:min(340px,48%);border-radius:16px;overflow:hidden;box-shadow:0 24px 60px -20px rgba(14,26,25,.45);border:1px solid var(--linha);background:#fff}
+/* dor */
+.dor{padding:130px 0 40px}
+.dor h2,.como h2,.fim h2,.repo h2,.telem h2,.faq h2{font-size:clamp(30px,3.8vw,48px);line-height:1.08;letter-spacing:-.035em;font-weight:700;max-width:22ch;text-wrap:balance}
+.dores{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:40px}
+.dores li{list-style:none;background:#fff;border:1px solid var(--linha);border-radius:var(--r);padding:26px 24px 28px}
+.dores .n{font-size:13px;font-weight:700;color:var(--risco);letter-spacing:.08em;text-transform:uppercase}
+.dores p{font-size:21px;line-height:1.3;letter-spacing:-.02em;font-weight:600;margin-top:12px}
+.dores small{display:block;margin-top:10px;font-size:15px;color:var(--tinta2);font-weight:400;letter-spacing:0}
+.custo{margin-top:22px;font-size:19px;color:var(--tinta2)}.custo b{color:var(--tinta)}
+/* como funciona */
+.como{padding:110px 0 30px}
+.passos{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:44px}
+.passo{background:#fff;border:1px solid var(--linha);border-radius:var(--r);overflow:hidden;display:flex;flex-direction:column}
+.passo .img{background:var(--papel2);aspect-ratio:16/10;overflow:hidden}
+.passo .img img{width:100%;height:100%;object-fit:cover;object-position:top left;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.passo:hover .img img{transform:scale(1.04)}
+.passo .txt{padding:22px 22px 26px}
+.passo b{display:block;font-size:13px;color:var(--teal);letter-spacing:.08em;text-transform:uppercase}
+.passo h3{font-size:21px;letter-spacing:-.02em;line-height:1.25;margin:8px 0 6px}
+.passo p{font-size:15.5px;color:var(--tinta2)}
+/* repositório */
+.repo{padding:110px 0 30px}
+.repo .caixa{background:var(--tinta);color:#E8EFEE;border-radius:24px;padding:clamp(32px,5vw,64px);display:grid;grid-template-columns:1.1fr .9fr;gap:40px;align-items:center}
+.repo h2{color:#fff}
+.repo p{margin-top:16px;color:#B9C6C3;font-size:18px;max-width:42ch}
+.repos{display:flex;gap:12px;flex-wrap:wrap;margin-top:26px}
+.repos span{border:1px solid #33504C;border-radius:999px;padding:9px 16px;font-weight:600;font-size:15px;color:#fff}
+.repo ul{list-style:none;display:grid;gap:14px}
+.repo li{display:flex;gap:12px;align-items:flex-start;font-size:16.5px;color:#DCE6E4}
+.repo li svg{flex:none;margin-top:3px}
+/* telemóvel / reels */
+.telem{padding:110px 0 30px}
+.telem .topo{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap}
+.telem p.l{color:var(--tinta2);max-width:38ch;margin-top:12px}
+.setas{display:flex;gap:10px}
+.setas button:disabled{opacity:.35;cursor:default}
+.setas button{width:48px;height:48px;border-radius:50%;border:1px solid var(--linha);background:#fff;cursor:pointer;display:grid;place-items:center;transition:background .2s}
+.setas button:hover{background:var(--papel2)}
+.fita{display:flex;gap:18px;overflow-x:auto;scroll-snap-type:x mandatory;margin-top:34px;padding-bottom:8px;scrollbar-width:none}
+.fita::-webkit-scrollbar{display:none}
+.reel{flex:0 0 min(300px,72vw);scroll-snap-align:start;aspect-ratio:9/16;border-radius:22px;overflow:hidden;background:#0E1A19;position:relative;border:6px solid #0E1A19}
+.reel img,.reel video{width:100%;height:100%;object-fit:cover;object-position:top}
+.reel figcaption{position:absolute;left:0;right:0;bottom:0;padding:44px 16px 16px;background:linear-gradient(transparent,rgba(14,26,25,.92));color:#fff;font-weight:600;font-size:16px;line-height:1.3}
+/* faq */
+.faq{padding:110px 0 30px}
+.faq details{border-bottom:1px solid var(--linha);padding:22px 0}
+.faq summary{cursor:pointer;font-weight:600;font-size:19px;letter-spacing:-.01em;list-style:none;display:flex;justify-content:space-between;gap:20px;min-height:44px;align-items:center}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:"+";font-size:26px;font-weight:400;color:var(--teal);transition:transform .3s}
+.faq details[open] summary::after{transform:rotate(45deg)}
+.faq details p{margin-top:10px;color:var(--tinta2);max-width:64ch}
+.faq .lista{margin-top:30px}
+/* fim e formulário */
+.fim{padding:120px 0 120px}
+.fim .caixa{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.fim p.l{margin-top:16px;color:var(--tinta2);font-size:18px;max-width:36ch}
+.fim ul{list-style:none;margin-top:24px;display:grid;gap:10px;color:var(--tinta2)}
+.fim ul li::before{content:"✓";color:var(--teal);font-weight:700;margin-right:10px}
+form{background:#fff;border:1px solid var(--linha);border-radius:20px;padding:30px;display:grid;gap:16px}
+label{display:grid;gap:6px;font-size:14px;font-weight:600}
+input[type=text],input[type=email]{font:inherit;font-size:16px;border:1px solid var(--linha);border-radius:10px;padding:13px 14px;background:var(--papel);min-height:48px}
+input:focus-visible,.chips label:has(input:focus-visible){outline:2px solid var(--teal);outline-offset:2px}
+fieldset{border:0;display:grid;gap:8px}
+legend{font-size:14px;font-weight:600;margin-bottom:6px}
+.chips{display:flex;gap:8px;flex-wrap:wrap}
+.chips label{display:flex;align-items:center;font-weight:600;font-size:15px;border:1px solid var(--linha);border-radius:999px;padding:0 18px;min-height:48px;cursor:pointer;background:var(--papel);position:relative}
+.chips input{position:absolute;inset:0;opacity:0;cursor:pointer}
+.chips label:has(input:checked){background:var(--tinta);color:#fff;border-color:var(--tinta)}
+.consente{display:flex;gap:10px;align-items:center;min-height:44px;font-weight:400;font-size:14px;color:var(--tinta2)}
+.consente input{width:24px;height:24px;flex:none;accent-color:var(--teal)}
+form .btn{width:100%;min-height:54px;font-size:17px}
+.ok{text-align:center;padding:30px 10px}.ok h3{font-size:24px;letter-spacing:-.02em}.ok p{color:var(--tinta2);margin-top:8px}
+.erro{color:var(--risco);font-size:14px}
+/* rodapé */
+footer{border-top:1px solid var(--linha);padding:30px 0 120px;font-size:14px;color:var(--tinta2)}
+footer .w{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer a{text-underline-offset:3px;display:inline-flex;align-items:center;min-height:44px}
+.consente a{display:inline-flex;align-items:center;min-height:44px;padding:0 4px}
+.calma{background:none;border:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer;min-height:44px}
+/* barra fixa do telemóvel */
+.fixo{position:fixed;left:12px;right:12px;bottom:12px;z-index:30;display:none;transform:translateY(0);transition:transform .35s cubic-bezier(.2,.8,.2,1)}
+.fixo .btn{width:100%;min-height:54px;box-shadow:0 16px 40px -12px rgba(14,26,25,.5)}
+.fixo.fora{transform:translateY(140%)}
+/* entradas */
+.sobe{transform:translateY(26px);transition:transform .9s cubic-bezier(.2,.8,.2,1)}
+.sobe.viu{transform:none}
+@media (max-width:900px){
+  .dores,.passos{grid-template-columns:1fr}
+  .repo .caixa,.fim .caixa{grid-template-columns:1fr}
+  .selo{position:relative;right:auto;bottom:auto;width:86%;margin:-40px auto 0}
+  .selo.tel{width:46%;margin:-60px 6% 0 auto}
+  .cab .btn{display:none}
+  .fixo{display:block}
+  .hero{padding-top:44px}
+  .janela{transform:none}
+}
+@media (prefers-reduced-motion:reduce){.btn:hover{transform:none}}
+html.sem-movimento *{animation:none!important;transition:none!important}
+html.sem-movimento .del::after{transform:scaleX(1)}
+html.sem-movimento .ins{clip-path:none}
+html.sem-movimento .sobe,html.sem-movimento .janela{transform:none}
+</style>
+<script>try{if(localStorage.getItem("lv-calma")==="1")document.documentElement.classList.add("sem-movimento")}catch(e){}</script>
+</head>
+<body>
+<a class="salta" href="#principal">Saltar para o conteúdo</a>
+<header class="cab" id="cab"><div class="w">
+  <a class="marca" href="https://legal.texter.ai/pt" data-evento="site-principal"><img src="../marca/legalvector-mark.svg?v=c874b181" alt="" width="30" height="30"><span>legal<b>Vector</b></span></a>
+  <a class="btn pequeno" href="#demo" data-cta="cabecalho">Marcar demonstração</a>
+</div></header>
+
+<main id="principal">
+<section class="hero"><div class="w">
+  <span class="olho"><i></i>Datas-chave lidas do contrato</span>
+  <h1>O prazo de denúncia <span class="del">passou</span> <span class="ins">está no calendário</span>.</h1>
+  <p class="sub">O legalVector lê de cada contrato o pré-aviso, a renovação e o fim. E avisa antes de o contrato se renovar sozinho.</p>
+  <div class="acoes">
+    <a class="btn" href="#demo" data-cta="hero">Marcar demonstração <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    <a class="lig" href="#como" data-evento="ver-como">Ver como funciona</a>
+  </div>
+  <p class="nota">30 minutos com a equipa. Sem compromisso.</p>
+  <div class="palco">
+    <div class="janela" id="janela"><div class="barra"><i></i><i></i><i></i><span>Jurídico · Datas-chave e obrigações</span></div>
+      <img src="../img/pt-nt-lg-keydates-1400.webp?v=c745c28e" srcset="../img/pt-nt-lg-keydates-760.webp?v=1fa009f4 760w, ../img/pt-nt-lg-keydates-1400.webp?v=c745c28e 1400w" sizes="(max-width:1192px) calc(100vw - 32px), 1160px" width="1400" height="875" alt="Datas-chave no legalVector: prazo de pré-aviso ultrapassado, prazos nos próximos 30 dias e contratos a terminar" fetchpriority="high">
+    </div>
+    
+  </div>
+</div></section>
+
+<section class="dor" aria-labelledby="t-dor"><div class="w sobe">
+  <h2 id="t-dor">Quem sabe hoje quando termina cada contrato?</h2>
+  <ul class="dores"><li><span class="n">Calendário</span><p>O prazo vive no calendário de alguém.<small>Até essa pessoa ir de férias.</small></p></li><li><span class="n">Renovação</span><p>O contrato renova-se sozinho.<small>Mais doze meses que ninguém decidiu.</small></p></li><li><span class="n">Pesquisa</span><p>Para saber o pré-aviso, abre-se o PDF.<small>Um contrato de cada vez.</small></p></li></ul>
+  <p class="custo">Um pré-aviso perdido não se recupera. <b>O contrato renova-se ou cessa nos termos previstos.</b></p>
+</div></section>
+
+<section class="como" id="como" aria-labelledby="t-como"><div class="w sobe">
+  <h2 id="t-como">As datas saem do contrato. Não de um Excel.</h2>
+  <div class="passos"><article class="passo"><div class="img"><img src="../img/pt-nt-lg-prefill-760.webp?v=e03ee941" width="760" height="475" alt="Pedido novo com os dados lidos do ficheiro Word" loading="lazy"></div><div class="txt"><b>Ler</b><h3>O contrato entra e as datas saem dele.</h3><p>Início, fim, pré-aviso, renovação e valor, lidos do documento.</p></div></article><article class="passo"><div class="img"><img src="../img/pt-nt-lg-keydates-760.webp?v=1fa009f4" width="760" height="475" alt="Lista de prazos de pré-aviso e contratos a terminar" loading="lazy"></div><div class="txt"><b>Avisar</b><h3>O que vence nos próximos 30 e 60 dias, à vista.</h3><p>Prazos ultrapassados a vermelho. Exporta para o calendário.</p></div></article><article class="passo"><div class="img"><img src="../img/pt-nt-lg-inbox-760.webp?v=9bcba223" width="760" height="475" alt="Caixa de entrada do Jurídico com os pedidos em aberto" loading="lazy"></div><div class="txt"><b>Decidir</b><h3>Renovar, renegociar ou denunciar.</h3><p>A decisão fica registada no repositório, com o contrato.</p></div></article></div>
+</div></section>
+
+<section class="repo" aria-labelledby="t-repo"><div class="w sobe"><div class="caixa">
+  <div>
+    <h2 id="t-repo">Não muda de repositório.</h2>
+    <p>O legalVector assenta no Alfresco ou no Doxis que a empresa já usa. Documentos, versões e permissões ficam lá. O Jurídico ganha a porta de entrada, a IA e as datas-chave.</p>
+    <div class="repos"><span>Alfresco Content Services</span><span>Doxis 4</span></div>
+  </div>
+  <ul>
+    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Cada chamada passa pela API oficial do repositório, com os direitos de quem entrou.</li>
+    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>As chaves da IA ficam no servidor.</li>
+    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Quem pede só vê os seus pedidos.</li>
+    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#5EEAD4" stroke-width="2.4"><path d="M4 12l5 5L20 6"/></svg>Em português, inglês, espanhol, francês e árabe.</li>
+  </ul>
+</div></div></section>
+
+<section class="telem" aria-labelledby="t-telem"><div class="w sobe">
+  <div class="topo"><div><h2 id="t-telem">Pedir ao Jurídico, em qualquer ecrã.</h2><p class="l">Do telemóvel ao ecrã do Jurídico. Veja o pedido a fazer o caminho todo.</p></div>
+    <div class="setas"><button type="button" aria-label="Anterior" data-fita="-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" aria-label="Seguinte" data-fita="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
+  <div class="fita" id="fita">
+    <figure class="reel" data-reel="1"><img src="../img/pt-nt-ph-new-420.webp?v=374783d3" width="420" height="908" alt="Ecrã do telemóvel: Pedir ao Jurídico, escolher o tipo de pedido" loading="lazy"><figcaption>1 · Quem precisa pede num minuto</figcaption></figure>
+    <figure class="reel" data-reel="2"><img src="../img/pt-nt-ph-request-420.webp?v=e38f0781" width="420" height="908" alt="Ecrã do telemóvel: um pedido ao Jurídico com o estado à vista" loading="lazy"><figcaption>2 · O estado do pedido sempre à vista</figcaption></figure>
+    <figure class="reel" data-reel="3"><img src="../img/pt-nt-ph-inbox-420.webp?v=a907dd39" width="420" height="908" alt="Ecrã do telemóvel: caixa de entrada do Jurídico" loading="lazy"><figcaption>3 · O Jurídico decide, onde estiver</figcaption></figure>
+  </div>
+</div></section>
+
+<section class="faq" aria-labelledby="t-faq"><div class="w sobe">
+  <h2 id="t-faq">Perguntas de quem já gere um Jurídico.</h2>
+  <div class="lista">
+    <details><summary>A IA aprova contratos sozinha?</summary><p>Não. A IA revê pelo manual da empresa e propõe a redação. Uma pessoa decide sempre, e uma cláusula que falha bloqueia a aprovação até um advogado registar o motivo.</p></details>
+    <details><summary>Temos de migrar documentos?</summary><p>Não. O legalVector corre sobre o Alfresco ou o Doxis que já usam. O repositório continua a ser o registo oficial.</p></details>
+    <details><summary>As alterações saem no Word?</summary><p>Sim. As correções aceites são marcas de revisão Word verdadeiras, gravadas como nova versão do mesmo ficheiro.</p></details>
+    <details><summary>O que ainda não faz?</summary><p>Assinatura eletrónica e notificações no Teams ainda não estão incluídas. Dizemos-lho na demonstração, sem rodeios.</p></details>
+  </div>
+</div></section>
+
+<section class="fim" id="demo" aria-labelledby="t-fim"><div class="w"><div class="caixa">
+  <div>
+    <h2 id="t-fim">Veja os vossos prazos num só ecrã.</h2>
+    <p class="l">Mostramos as datas-chave a sair de contratos reais, sobre o repositório que já usam.</p>
+    <ul><li>30 minutos, com o vosso caso</li><li>No repositório que já usam</li><li>Confirmação por email num dia útil</li></ul>
+  </div>
+  <form id="form" novalidate>
+    <label>Nome<input type="text" name="nome" autocomplete="name" required></label>
+    <label>Email de trabalho<input type="email" name="email" autocomplete="email" required></label>
+    <label>Empresa<input type="text" name="empresa" autocomplete="organization" required></label>
+    <fieldset><legend>Que repositório usam? <span style="font-weight:400;color:var(--tinta2)">(opcional)</span></legend><div class="chips">
+      <label><input type="radio" name="repositorio" value="Alfresco">Alfresco</label>
+      <label><input type="radio" name="repositorio" value="Doxis">Doxis</label>
+      <label><input type="radio" name="repositorio" value="Outro">Outro</label>
+    </div></fieldset>
+    <label class="consente"><input type="checkbox" name="consente" required>Aceito ser contactado sobre este pedido. <a href="https://texter.ai/privacy" target="_blank" rel="noopener">Privacidade</a></label>
+    <p class="erro" id="erro" hidden>Falta preencher um campo.</p>
+    <button class="btn" type="submit" data-cta="enviar">Marcar a minha demonstração</button>
+  </form>
+  <div class="ok" id="ok" hidden tabindex="-1"><h3>Pedido recebido.</h3><p>Confirmamos a hora por email num dia útil.</p></div>
+</div></div></section>
+</main>
+
+<footer><div class="w">
+  <span>legalVector é um produto TexterBlue · <a href="https://legal.texter.ai/pt" data-evento="site-principal">Conhecer o produto todo</a></span>
+  <button class="calma" type="button" id="calma">Reduzir movimento</button>
+</div></footer>
+
+<div class="fixo fora" id="fixo"><a class="btn" href="#demo" data-cta="barra-fixa">Marcar demonstração</a></div>
+
+<script>
+(function(){
+  var CFG={lead:"",variante:"prazos",demo:"https://legal.texter.ai/pt/demo",previa:"1"==="1"};
+  var q=new URLSearchParams(location.search),limpa=function(v,n){return (v||"").replace(/[^\w\-.@ ]/g,"").slice(0,n||60)};
+  var origem={variante:CFG.variante,o:limpa(q.get("o")),utm_source:limpa(q.get("utm_source")),utm_medium:limpa(q.get("utm_medium")),utm_campaign:limpa(q.get("utm_campaign")),utm_content:limpa(q.get("utm_content")),lead_id:limpa(q.get("lid"))};
+  try{if(origem.utm_source||origem.o){localStorage.setItem("lv-origem",JSON.stringify({o:origem,t:Date.now()}))}else{var g=JSON.parse(localStorage.getItem("lv-origem")||"null");if(g&&Date.now()-g.t<2592e6){origem=Object.assign(g.o,{variante:CFG.variante,regresso:"1"})}}}catch(e){}
+  window.dataLayer=window.dataLayer||[];var ultimoCta="direto";
+  function ev(nome,extra){window.dataLayer.push(Object.assign({event:nome},origem,extra||{}))}
+  ev("pagina_vista");
+  document.addEventListener("click",function(e){var a=e.target.closest("[data-cta],[data-evento]");if(!a)return;var c=a.getAttribute("data-cta");if(c&&c!=="enviar"){ultimoCta=c;ev("cta",{cta:c})}else if(!c)ev(a.getAttribute("data-evento"))});
+  // o link para o site principal leva a origem
+  document.querySelectorAll('a[href^="https://legal.texter.ai"]').forEach(function(a){var u=new URL(a.href);["utm_source","utm_medium","utm_campaign"].forEach(function(k){if(origem[k])u.searchParams.set(k,origem[k])});u.searchParams.set("utm_content","lp-"+CFG.variante);a.href=u.toString()});
+  // cabeçalho, barra fixa e entradas
+  var cab=document.getElementById("cab"),fixo=document.getElementById("fixo"),fim=document.getElementById("demo"),heroCta=document.querySelector('[data-cta="hero"]'),vHero=true,vFim=false;
+  function poe(){fixo.classList.toggle("fora",vHero||vFim)}
+  addEventListener("scroll",function(){cab.classList.toggle("desceu",scrollY>8)},{passive:true});
+  if("IntersectionObserver" in window){
+    new IntersectionObserver(function(x){vHero=x[0].isIntersecting;poe()}).observe(heroCta);
+    new IntersectionObserver(function(x){vFim=x[0].isIntersecting;poe()},{rootMargin:"0px 0px -30% 0px"}).observe(fim);
+    var io=new IntersectionObserver(function(x){x.forEach(function(i){if(i.isIntersecting){i.target.classList.add("viu");io.unobserve(i.target)}})},{rootMargin:"0px 0px -12% 0px"});
+    document.querySelectorAll(".sobe,.janela").forEach(function(el){io.observe(el)});
+  }else{document.querySelectorAll(".sobe,.janela").forEach(function(el){el.classList.add("viu")})}
+  // carrossel
+  var fita=document.getElementById("fita"),setas=document.querySelectorAll("[data-fita]");
+  function pontas(){var max=fita.scrollWidth-fita.clientWidth-2;setas[0].disabled=fita.scrollLeft<=2;setas[1].disabled=fita.scrollLeft>=max;document.querySelector(".setas").hidden=max<=0}
+  setas.forEach(function(b){b.addEventListener("click",function(){fita.scrollBy({left:+b.getAttribute("data-fita")*fita.clientWidth*.8,behavior:"smooth"})})});
+  fita.addEventListener("scroll",pontas,{passive:true});addEventListener("resize",pontas);pontas();
+  // reduzir movimento
+  document.getElementById("calma").addEventListener("click",function(){var on=document.documentElement.classList.toggle("sem-movimento");try{localStorage.setItem("lv-calma",on?"1":"0")}catch(e){}});
+  // formulário
+  var f=document.getElementById("form"),erro=document.getElementById("erro"),ok=document.getElementById("ok");
+  f.addEventListener("submit",async function(e){e.preventDefault();
+    if(!f.checkValidity()){erro.hidden=false;var p=f.querySelector(":invalid");p&&p.focus();return}
+    erro.hidden=true;var d=Object.fromEntries(new FormData(f));delete d.consente;
+    var corpo=Object.assign(d,origem,{cta:ultimoCta,pagina:location.pathname,quando:new Date().toISOString()});
+    ev("lead",{cta:ultimoCta});
+    try{if(CFG.lead){var r=await fetch(CFG.lead,{method:"POST",headers:{"content-type":"application/json"},body:JSON.stringify(corpo)});if(!r.ok)throw 0}
+        else if(CFG.previa){ok.querySelector("p").textContent="Prévia para o grupo: aqui o pedido ainda não é enviado. Liga-se ao Twenty quando houver o endereço."}
+        else{location.href=CFG.demo+"?utm_source="+encodeURIComponent(origem.utm_source||"lp")+"&utm_content=lp-"+CFG.variante;return}
+      f.hidden=true;ok.hidden=false;ok.focus()}
+    catch(x){erro.textContent="Não foi possível enviar. Tente outra vez ou marque em legal.texter.ai.";erro.hidden=false}
+  });
+})();
+</script>
+</body>
+</html>
