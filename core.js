@@ -88,8 +88,8 @@
   }
 
   var bt = D.getElementById("calma");
-  if (bt) { if (calma) { bt.textContent = "Repor movimento"; bt.setAttribute("aria-pressed", "true"); }
-    bt.addEventListener("click", function () { var on = H.classList.toggle("sem-movimento"); bt.textContent = on ? "Repor movimento" : "Reduzir movimento"; bt.setAttribute("aria-pressed", String(on)); try { localStorage.setItem("lv-calma", on ? "1" : "0"); } catch (e) {} }); }
+  if (bt) { if (calma) { bt.textContent = "Restore motion"; bt.setAttribute("aria-pressed", "true"); }
+    bt.addEventListener("click", function () { var on = H.classList.toggle("sem-movimento"); bt.textContent = on ? "Restore motion" : "Reduce motion"; bt.setAttribute("aria-pressed", String(on)); try { localStorage.setItem("lv-calma", on ? "1" : "0"); } catch (e) {} }); }
 
   /* carrossel dos telemóveis (lugar dos 3 reels do Tomás) */
   var fita = D.querySelector("[data-fita]"), setas = D.querySelectorAll("[data-seta]");
@@ -109,9 +109,9 @@
     ev("lead", { cta: ultimoCta });
     try {
       if (CFG.lead) { var r = await fetch(CFG.lead, { method: "POST", headers: { "content-type": "application/json" }, body: JSON.stringify(corpo) }); if (!r.ok) throw 0; }
-      else if (CFG.previa) ok.querySelector("p").textContent = "Prévia para o grupo: aqui o pedido ainda não é enviado. Liga-se ao Twenty quando houver o endereço.";
-      else { location.href = "https://legal.texter.ai/pt/demo?utm_source=" + encodeURIComponent(origem.utm_source || "lp") + "&utm_content=lp-" + CFG.variante; return; }
+      else if (CFG.previa) ok.querySelector("p").textContent = "Team preview: this request is not sent anywhere yet. It goes live once the CRM endpoint is connected.";
+      else { location.href = "https://legal.texter.ai/en/demo?utm_source=" + encodeURIComponent(origem.utm_source || "lp") + "&utm_content=lp-" + CFG.variante; return; }
       form.hidden = true; ok.hidden = false; ok.focus();
-    } catch (x) { erro.textContent = "Não foi possível enviar. Tente outra vez ou marque em legal.texter.ai."; erro.hidden = false; }
+    } catch (x) { erro.textContent = "We couldn’t send this. Please try again, call +351 916 868 318 or book at legal.texter.ai."; erro.hidden = false; }
   });
 })();

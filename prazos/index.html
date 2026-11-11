@@ -1,14 +1,14 @@
 <!doctype html>
-<html lang="pt-PT">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>O contrato renovou-se sozinho · legalVector</title>
-<meta name="description" content="legalVector lê de cada contrato o pré-aviso, a renovação e o fim, e avisa 30 e 60 dias antes. Sobre o Alfresco ou Doxis que já usa.">
+<title>The contract renewed itself · legalVector</title>
+<meta name="description" content="legalVector reads the notice period, renewal and end date of every contract and alerts you 60 and 30 days before. Runs on the Alfresco or Doxis you already use.">
 <meta name="robots" content="noindex, nofollow">
 <link rel="canonical" href="https://joaosoares-bit.github.io/legalvector-landings/prazos/">
-<meta property="og:title" content="O contrato renovou-se sozinho · legalVector">
-<meta property="og:description" content="legalVector lê de cada contrato o pré-aviso, a renovação e o fim, e avisa 30 e 60 dias antes. Sobre o Alfresco ou Doxis que já usa.">
+<meta property="og:title" content="The contract renewed itself · legalVector">
+<meta property="og:description" content="legalVector reads the notice period, renewal and end date of every contract and alerts you 60 and 30 days before. Runs on the Alfresco or Doxis you already use.">
 <meta property="og:url" content="https://joaosoares-bit.github.io/legalvector-landings/prazos/">
 <meta property="og:image" content="https://joaosoares-bit.github.io/legalvector-landings/prazos/og.png">
 <meta property="og:image:width" content="1200">
@@ -17,7 +17,7 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="theme-color" content="#0A1024">
 <link rel="icon" href="../marca/legalvector-mark.svg?v=c874b181" type="image/svg+xml">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"legalVector","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://legal.texter.ai/","inLanguage":["pt-PT","en","es","fr","ar"],"publisher":{"@type":"Organization","name":"TexterBlue","url":"https://texter.ai/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"SoftwareApplication","name":"legalVector","applicationCategory":"BusinessApplication","operatingSystem":"Web","url":"https://legal.texter.ai/","inLanguage":["en","es","pt-PT","fr","ar"],"publisher":{"@type":"Organization","name":"TexterBlue","url":"https://texter.ai/"}}</script>
 <script>try{if(localStorage.getItem("lv-calma")==="1")document.documentElement.classList.add("sem-movimento")}catch(e){}</script>
 <link rel="preload" href="../fontes/montserrat.woff2?v=06b16db7" as="font" type="font/woff2" crossorigin>
 <style>
@@ -63,6 +63,8 @@ html.aberto .marca svg{visibility:visible}
 .fixo{position:fixed;z-index:45;right:max(20px,env(safe-area-inset-right,0px));bottom:calc(20px + env(safe-area-inset-bottom,0px));display:flex;align-items:center;gap:14px;transition:transform 250ms cubic-bezier(.2,.8,.2,1)}
 .fixo.fora{transform:translateY(calc(100% + 40px))}
 .fixo span{font-size:13px;background:var(--fundo);padding:8px 12px}
+.fixo .fala{font-size:15px;font-weight:600;color:var(--tinta);background:var(--fundo);border:1px solid var(--fio);border-radius:4px;min-height:48px;padding:0 16px;display:inline-flex;align-items:center;text-decoration:none}
+.fixo .fala:hover{border-color:currentColor}
 .botao{display:inline-flex;align-items:center;justify-content:center;gap:12px;min-height:54px;padding:0 26px;border:0;cursor:pointer;text-decoration:none;font:inherit;font-weight:650;font-size:17px;letter-spacing:-.005em;background:var(--botao);color:var(--botao-tinta);border-radius:4px;transition:background-color 250ms,transform 250ms cubic-bezier(.2,.8,.2,1)}
 .botao:hover{transform:translateY(-2px)}
 .botao i{display:block;width:8px;height:8px;background:var(--ambar);transform:rotate(45deg)}
@@ -92,7 +94,7 @@ html.aberto .h-entra .linha>span{transform:none}
 .rodape .w{display:flex;flex-wrap:wrap;gap:6px 28px;align-items:center}
 .rodape a{display:inline-flex;align-items:center;min-height:44px}
 .calma{background:none;border:0;font:inherit;color:inherit;text-decoration:underline;cursor:pointer;min-height:44px}
-@media (max-width:760px){.pedido{grid-template-columns:minmax(0,1fr)}.fixo{left:16px;right:16px}.fixo span{display:none}.fixo .botao{width:100%}}
+@media (max-width:760px){.pedido{grid-template-columns:minmax(0,1fr)}.fixo{left:16px;right:16px;gap:8px}.fixo span{display:none}.fixo .botao{flex:1;justify-content:center}.fixo .fala{padding:0 12px}}
 @media (prefers-reduced-motion:reduce){.botao:hover{transform:none}}
 html.sem-movimento *,html.sem-movimento *::before,html.sem-movimento *::after{animation:none!important;transition:none!important}
 html.sem-movimento .linha>span,html.sem-movimento [data-entra],html.sem-movimento [data-revela],html.sem-movimento [data-paralaxe],html.sem-movimento .hero .w{transform:none;clip-path:none}
@@ -190,115 +192,115 @@ html.sem-movimento .trilho{animation:none}
 </head>
 <body>
 <canvas id="fundo" aria-hidden="true"></canvas>
-<a class="salta" href="#principal">Saltar para o conteúdo</a>
+<a class="salta" href="#principal">Skip to content</a>
 <div class="abertura" aria-hidden="true"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="ga" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14B8A6"/><stop offset="1" stop-color="#0F766E"/></linearGradient></defs><rect class="m-fundo" x="4" y="4" width="56" height="56" rx="16" fill="url(#ga)"/><path class="m-v" d="M17 21l14 25 15-28" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><path class="m-seta" d="M37 17.5l9.5 .5 .5 9.5" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><circle class="m-ponto" cx="17" cy="21" r="4.5" fill="#F59E0B"/></svg></div>
 <header class="cab"><div class="w">
-  <a class="marca" href="https://legal.texter.ai/pt" data-evento="site-principal"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14B8A6"/><stop offset="1" stop-color="#0F766E"/></linearGradient></defs><rect class="m-fundo" x="4" y="4" width="56" height="56" rx="16" fill="url(#gb)"/><path class="m-v" d="M17 21l14 25 15-28" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><path class="m-seta" d="M37 17.5l9.5 .5 .5 9.5" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><circle class="m-ponto" cx="17" cy="21" r="4.5" fill="#F59E0B"/></svg><span>legalVector</span></a>
-  <a class="entrar" href="#pedido" data-cta="cabecalho">Marcar demonstração</a>
+  <a class="marca" href="https://legal.texter.ai/en" data-evento="site-principal"><svg viewBox="0 0 64 64" aria-hidden="true"><defs><linearGradient id="gb" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#14B8A6"/><stop offset="1" stop-color="#0F766E"/></linearGradient></defs><rect class="m-fundo" x="4" y="4" width="56" height="56" rx="16" fill="url(#gb)"/><path class="m-v" d="M17 21l14 25 15-28" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><path class="m-seta" d="M37 17.5l9.5 .5 .5 9.5" fill="none" stroke="#fff" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" pathLength="1"/><circle class="m-ponto" cx="17" cy="21" r="4.5" fill="#F59E0B"/></svg><span>legalVector</span></a>
+  <a class="entrar" href="#pedido" data-cta="cabecalho">Book a demo</a>
 </div></header>
 
 <main id="principal">
 <section class="hero" aria-labelledby="t-hero">
   <div class="w">
     <div>
-      <h1 id="t-hero" class="h-entra"><span class="linha"><span>O contrato</span></span> <span class="linha"><span>renovou-se</span></span> <span class="linha"><span><em>sozinho.</em></span></span></h1>
-      <p class="sub">Ninguém viu o prazo de pré-aviso. O legalVector lê as datas de cada contrato e avisa antes de vencerem.</p>
-      <div class="acoes"><a class="botao" href="#pedido" data-cta="hero">Marcar demonstração <i></i></a><a class="leve" href="https://legal.texter.ai/legalVector-WhitePaper-PT.pdf" target="_blank" rel="noopener" data-evento="white-paper">Ainda a comparar? O white paper</a></div>
+      <h1 id="t-hero" class="h-entra"><span class="linha"><span>The contract</span></span> <span class="linha"><span>renewed</span></span> <span class="linha"><span><em>itself.</em></span></span></h1>
+      <p class="sub">Nobody saw the notice deadline. legalVector reads the dates in every contract and warns you before they pass.</p>
+      <div class="acoes"><a class="botao" href="#pedido" data-cta="hero">Book a demo <i></i></a><a class="leve" href="https://legal.texter.ai/legalVector-WhitePaper-EN.pdf" target="_blank" rel="noopener" data-evento="white-paper">Still comparing? Read the white paper</a></div>
     </div>
-    <div class="relogio" aria-hidden="true"><span class="n" id="dias">60</span><span class="r" id="rotulo">dias até ao fim do prazo de pré-aviso</span></div>
+    <div class="relogio" aria-hidden="true"><span class="n" id="dias">60</span><span class="r" id="rotulo">days left to give notice</span></div>
   </div>
   <div class="esteira" aria-hidden="true">
-    <div class="linha-pa"></div><span class="rot-pa">prazo de pré-aviso</span>
+    <div class="linha-pa"></div><span class="rot-pa">notice deadline</span>
     <div class="trilho" id="trilho"></div>
   </div>
 </section>
 
 <section class="sec" aria-labelledby="t-quem"><div class="w">
-  <h2 id="t-quem" data-entra>Quem sabe hoje <em>quando termina</em> cada contrato?</h2>
-  <p class="l">Num Jurídico com centenas de contratos, o pré-aviso vive no calendário de alguém. O legalVector lê-o do próprio contrato e põe-no à vista de toda a equipa.</p>
+  <h2 id="t-quem" data-entra>Who knows <em>when</em> each contract ends?</h2>
+  <p class="l">In a Legal team with hundreds of contracts, the notice period lives in one person’s calendar. legalVector reads it from the contract itself and puts it in front of the whole team.</p>
   <div class="prova dentro" data-revela>
-    <img src="../img/pt-nt-lg-keydates-1400.webp?v=c745c28e" srcset="../img/pt-nt-lg-keydates-760.webp?v=1fa009f4 760w, ../img/pt-nt-lg-keydates-1400.webp?v=c745c28e 1400w" sizes="(max-width:1280px) calc(100vw - 40px), 1240px" width="1400" height="875" alt="Datas-chave no legalVector: um prazo de pré-aviso ultrapassado, dois nos próximos 30 dias e dois contratos a terminar nos próximos 60 dias" loading="lazy">
+    <img src="../img/en-nt-lg-keydates-1400.webp?v=e0aaaa75" srcset="../img/en-nt-lg-keydates-760.webp?v=d677e7b4 760w, ../img/en-nt-lg-keydates-1400.webp?v=e0aaaa75 1400w" sizes="(max-width:1280px) calc(100vw - 40px), 1240px" width="1400" height="875" alt="Key dates in legalVector: notice deadlines already passed, notices due in the next 30 days and contracts ending in the next 60 days" loading="lazy">
     <svg class="circ" viewBox="0 0 100 62.5" preserveAspectRatio="none" aria-hidden="true"><path pathLength="1" d="M2.8 25.6 C 10 23.2, 24 23, 33.4 24.6 C 35.4 25.6, 35.6 34, 33.6 35.6 C 24 37.6, 9 37.4, 2.6 35.6 C 0.8 34.4, 1 27, 3.6 25.2"/></svg>
-    <p class="nota">O contrato renova-se ou cessa nos termos previstos, salvo se agir já.</p>
+    <p class="nota">The contract renews or ends on its own terms, unless you act now.</p>
   </div>
 </div></section>
 
-<section class="datas" aria-label="As datas que cada contrato já tem">
-  <div class="faixa" data-dir="-1">Início · Fim · <em>Pré-aviso</em> · Renovação · Valor · Início · Fim ·</div>
-  <div class="faixa" data-dir="1">Renovação · Valor · <em>Pré-aviso</em> · Início · Fim · Renovação · Valor ·</div>
+<section class="datas" aria-label="The dates every contract already holds">
+  <div class="faixa" data-dir="-1">Start · End · <em>Notice</em> · Renewal · Value · Start · End ·</div>
+  <div class="faixa" data-dir="1">Renewal · Value · <em>Notice</em> · Start · End · Renewal · Value ·</div>
 </section>
 
 <section class="sec" aria-labelledby="t-como"><div class="w">
-  <h2 id="t-como" data-entra>O aviso chega <em>antes</em> do prazo, não depois.</h2>
-  <div class="regua" data-entra role="img" aria-label="Avisos aos 60 e aos 30 dias antes do prazo de pré-aviso">
+  <h2 id="t-como" data-entra>The alert lands <em>before</em> the deadline. Not after.</h2>
+  <div class="regua" data-entra role="img" aria-label="Alerts 60 and 30 days before the notice deadline">
     <div class="eixo"></div><div class="feito"></div>
-    <div class="marco" style="left:8%;color:var(--teal)"><b>60 dias</b><i></i><span>primeiro aviso</span></div>
-    <div class="marco" style="left:50%;color:var(--ambar)"><b>30 dias</b><i></i><span>renovar ou denunciar</span></div>
-    <div class="marco" style="left:92%;color:var(--alarme)"><b>Prazo</b><i></i><span>pré-aviso</span></div>
+    <div class="marco" style="left:8%;color:var(--teal)"><b>60 days</b><i></i><span>first alert</span></div>
+    <div class="marco" style="left:50%;color:var(--ambar)"><b>30 days</b><i></i><span>renew or terminate</span></div>
+    <div class="marco" style="left:92%;color:var(--alarme)"><b>Deadline</b><i></i><span>notice</span></div>
   </div>
   <div class="passos3">
     <ol>
-      <li><div><strong>Ler</strong><p>O contrato entra e as datas saem dele: início, fim, pré-aviso, renovação e valor.</p></div></li>
-      <li><div><strong>Avisar</strong><p>O que vence nos próximos 30 e 60 dias, à vista. O que já passou, a vermelho. Exporta para o calendário.</p></div></li>
-      <li><div><strong>Decidir</strong><p>Renovar, renegociar ou denunciar. A decisão fica no repositório, com o contrato.</p></div></li>
+      <li><div><strong>Read</strong><p>The contract goes in and the dates come out: start, end, notice, renewal and value.</p></div></li>
+      <li><div><strong>Alert</strong><p>What falls due in the next 30 and 60 days, in view. What has passed, in red. Export it all to your calendar.</p></div></li>
+      <li><div><strong>Decide</strong><p>Renew, renegotiate or terminate. The decision stays in the repository, with the contract.</p></div></li>
     </ol>
-    <img data-paralaxe="0.08" src="../img/pt-nt-lg-prefill-760.webp?v=e03ee941" width="760" height="475" alt="Pedido com os dados lidos do contrato Word" loading="lazy">
+    <img data-paralaxe="0.08" src="../img/en-nt-lg-prefill-760.webp?v=f5ac5759" width="760" height="475" alt="A request with the data read from the Word contract" loading="lazy">
   </div>
 </div></section>
 
 <section class="sec repo" aria-labelledby="t-repo"><div class="w">
-  <h2 id="t-repo" data-entra>As datas ficam no <em>vosso</em> repositório.</h2>
-  <p class="l">O legalVector corre sobre o Alfresco ou o Doxis que a empresa já usa. Não há migração: as datas-chave ficam gravadas no próprio documento.</p>
+  <h2 id="t-repo" data-entra>The dates stay in <em>your</em> repository.</h2>
+  <p class="l">legalVector runs on the Alfresco or Doxis your company already uses. No migration: key dates are stored on the document itself.</p>
   <div class="fatos">
-    <p><b>Pela API oficial.</b> Cada chamada passa pelo repositório, com os direitos de quem entrou.</p>
-    <p><b>Calendário do Jurídico.</b> Exporta os prazos em .ics para o calendário que a equipa já usa.</p>
-    <p><b>As chaves da IA ficam no servidor.</b> Quem pede só vê os seus pedidos.</p>
-    <p><b>Em cinco línguas.</b> Português, inglês, espanhol, francês e árabe.</p>
+    <p><b>Official APIs only.</b> Every call goes through the repository, as the signed-in user.</p>
+    <p><b>Legal’s calendar.</b> Deadlines export as .ics to the calendar your team already uses.</p>
+    <p><b>AI keys stay on the server.</b> Requesters only ever see their own requests.</p>
+    <p><b>Five languages.</b> English, Spanish, Portuguese, French and Arabic, right-to-left included.</p>
   </div>
 </div></section>
 
 <section class="sec telem" aria-labelledby="t-telem"><div class="w">
-  <div class="topo"><h2 id="t-telem" data-entra>O pedido e o prazo, no bolso.</h2><div class="setas"><button type="button" data-seta="-1" aria-label="Anterior"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-seta="1" aria-label="Seguinte"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
+  <div class="topo"><h2 id="t-telem" data-entra>The request and the deadline, in your pocket.</h2><div class="setas"><button type="button" data-seta="-1" aria-label="Previous"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" data-seta="1" aria-label="Next"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
   <div class="fita" data-fita>
-    <figure data-reel="1"><img src="../img/pt-nt-ph-new-420.webp?v=374783d3" width="420" height="909" alt="No telemóvel: escolher o tipo de pedido ao Jurídico" loading="lazy"><figcaption>Pedir em menos de um minuto</figcaption></figure>
-    <figure data-reel="2" data-paralaxe="0.06"><img src="../img/pt-nt-ph-request-420.webp?v=e38f0781" width="420" height="909" alt="No telemóvel: o pedido com o estado à vista" loading="lazy"><figcaption>O estado e o prazo à vista</figcaption></figure>
-    <figure data-reel="3"><img src="../img/pt-nt-ph-inbox-420.webp?v=a907dd39" width="420" height="909" alt="No telemóvel: a caixa de entrada do Jurídico" loading="lazy"><figcaption>O Jurídico decide a tempo</figcaption></figure>
+    <figure data-reel="1"><img src="../img/en-nt-ph-new-420.webp?v=aac44cd2" width="420" height="909" alt="On a phone: choosing the type of request to Legal" loading="lazy"><figcaption>Ask in under a minute</figcaption></figure>
+    <figure data-reel="2" data-paralaxe="0.06"><img src="../img/en-nt-ph-request-420.webp?v=e39fd16f" width="420" height="909" alt="On a phone: the request with its status in view" loading="lazy"><figcaption>Status and deadline in view</figcaption></figure>
+    <figure data-reel="3"><img src="../img/en-nt-ph-inbox-420.webp?v=a0b10b91" width="420" height="909" alt="On a phone: the Legal inbox" loading="lazy"><figcaption>Legal decides in time</figcaption></figure>
   </div>
 </div></section>
 
 <section class="sec fecho" id="pedido" aria-labelledby="t-fecho"><div class="w">
-  <div><h2 id="t-fecho">Veja os vossos prazos <em>antes</em> de vencerem.</h2><p class="l">30 minutos com a equipa, com contratos reais, sobre o repositório que já usam.</p></div>
+  <div><h2 id="t-fecho">See your deadlines <em>before</em> they pass.</h2><p class="l">30 minutes with our team, with real contracts, on the repository you already use.</p></div>
   <form class="pedido" id="form" novalidate>
-  <label>Nome<input type="text" id="f-nome" name="nome" autocomplete="name" required></label>
-  <label>Empresa<input type="text" id="f-empresa" name="empresa" autocomplete="organization" required></label>
-  <label class="largo">Email de trabalho<input type="email" id="f-email" name="email" autocomplete="email" required></label>
-  <fieldset><legend>Que repositório usam? (opcional)</legend><div class="escolha">
+  <label>Name<input type="text" id="f-nome" name="nome" autocomplete="name" required></label>
+  <label>Company<input type="text" id="f-empresa" name="empresa" autocomplete="organization" required></label>
+  <label class="largo">Work email<input type="email" id="f-email" name="email" autocomplete="email" required></label>
+  <fieldset><legend>Which repository do you use? (optional)</legend><div class="escolha">
     <label><input type="radio" name="repositorio" value="Alfresco">Alfresco</label>
     <label><input type="radio" name="repositorio" value="Doxis">Doxis</label>
-    <label><input type="radio" name="repositorio" value="Outro">Outro</label></div></fieldset>
-  <label class="consente"><input type="checkbox" id="f-consente" name="consente" required>Aceito ser contactado sobre este pedido. <a href="https://texter.ai/privacy" target="_blank" rel="noopener">Privacidade</a></label>
-  <p class="erro" id="erro" hidden>Falta preencher um campo.</p>
-  <button class="botao" type="submit" data-cta="enviar">Marcar a demonstração <i></i></button>
+    <label><input type="radio" name="repositorio" value="Other">Other</label></div></fieldset>
+  <label class="consente"><input type="checkbox" id="f-consente" name="consente" required>I agree to be contacted about this request. <a href="https://texter.ai/privacy" target="_blank" rel="noopener">Privacy</a></label>
+  <p class="erro" id="erro" hidden>A required field is empty.</p>
+  <button class="botao" type="submit" data-cta="enviar">Book the demo <i></i></button>
 </form>
-<div class="ok" id="ok" hidden tabindex="-1"><strong>Pedido recebido.</strong><p>Confirmamos a hora por email num dia útil.</p></div>
+<div class="ok" id="ok" hidden tabindex="-1"><strong>Request received.</strong><p>We’ll confirm the time by email within one business day.</p></div>
 
 </div></section>
 </main>
-<footer class="rodape"><div class="w"><span>legalVector é um produto TexterBlue.</span><a href="https://legal.texter.ai/pt" data-evento="site-principal">Conhecer o produto todo</a><a href="https://legal.texter.ai/legalVector-WhitePaper-PT.pdf" target="_blank" rel="noopener" data-evento="white-paper">White paper (PDF)</a><button class="calma" type="button" id="calma" aria-pressed="false">Reduzir movimento</button></div></footer>
-<div class="fixo fora"><span>30 minutos, com um caso vosso</span><a class="botao" href="#pedido" data-cta="barra-fixa">Marcar demonstração <i></i></a></div>
+<footer class="rodape"><div class="w"><span>legalVector is a TexterBlue product.</span><a href="https://legal.texter.ai/en" data-evento="site-principal">See the full product</a><a href="tel:+351916868318" data-cta="ligar-rodape">+351 916 868 318</a><a href="https://wa.me/351916868318?text=Hi%2C%20I%27d%20like%20to%20see%20legalVector" target="_blank" rel="noopener" data-cta="whatsapp-rodape">WhatsApp</a><a href="https://legal.texter.ai/legalVector-WhitePaper-EN.pdf" target="_blank" rel="noopener" data-evento="white-paper">White paper (PDF)</a><button class="calma" type="button" id="calma" aria-pressed="false">Reduce motion</button></div></footer>
+<div class="fixo fora"><span>30 minutes, on a case of yours</span><a class="fala" href="tel:+351916868318" data-cta="ligar" aria-label="Call +351 916 868 318">Call</a><a class="fala" href="https://wa.me/351916868318?text=Hi%2C%20I%27d%20like%20to%20see%20legalVector" target="_blank" rel="noopener" data-cta="whatsapp" aria-label="Message us on WhatsApp">WhatsApp</a><a class="botao" href="#pedido" data-cta="barra-fixa">Book a demo <i></i></a></div>
 <script>window.LV={lead:"",variante:"prazos",previa:true};</script>
-<script src="../core.js?v=eb360cda" defer></script>
+<script src="../core.js?v=8b0fa86e" defer></script>
 
 <script>
 (function(){
   var H=document.documentElement,calma=H.classList.contains("sem-movimento");
   var n=document.getElementById("dias"),r=document.getElementById("rotulo");
-  function venceu(){n.textContent="0";r.textContent="o contrato renovou-se por mais 12 meses";H.classList.add("venceu")}
+  function venceu(){n.textContent="0";r.textContent="the contract renewed for another 12 months";H.classList.add("venceu")}
   if(calma)venceu();else setTimeout(function(){var t0=performance.now(),D=2200;(function f(t){var k=Math.min(1,(t-t0)/D),e=1-Math.pow(1-k,3);n.textContent=Math.round(60*(1-e));if(k<1)requestAnimationFrame(f);else venceu()})(t0)},1900);
-  var C=[["Licença de software","renova por 12 meses"],["Prestação de serviços","pré-aviso 90 dias"],["Arrendamento de armazém","renova por 5 anos"],["Manutenção de frota","pré-aviso 60 dias"],["Fornecimento de energia","renova por 24 meses"],["Seguro de responsabilidade","pré-aviso 30 dias"],["Logística e transportes","renova por 12 meses"],["Limpeza e segurança","pré-aviso 60 dias"]];
+  var C=[["Software licence","renews for 12 months"],["Services agreement","90 days’ notice"],["Warehouse lease","renews for 5 years"],["Fleet maintenance","60 days’ notice"],["Energy supply","renews for 24 months"],["Liability insurance","30 days’ notice"],["Logistics and transport","renews for 12 months"],["Cleaning and security","60 days’ notice"]];
   var tr=document.getElementById("trilho"),h="";for(var k=0;k<2;k++)C.forEach(function(c){h+='<div class="ctr">'+c[0]+'<small>'+c[1]+'</small></div>'});tr.innerHTML=h;
   var cs=[].slice.call(tr.children),lp=document.querySelector(".linha-pa");
-  function ve(){if(calma)return;var x=lp.getBoundingClientRect().left;cs.forEach(function(c){var b=c.getBoundingClientRect();if(b.left<x&&b.right>0&&!c.classList.contains("renovou")){c.classList.add("renovou");c.querySelector("small").textContent="renovou sozinho"}});requestAnimationFrame(ve)}
+  function ve(){if(calma)return;var x=lp.getBoundingClientRect().left;cs.forEach(function(c){var b=c.getBoundingClientRect();if(b.left<x&&b.right>0&&!c.classList.contains("renovou")){c.classList.add("renovou");c.querySelector("small").textContent="renewed itself"}});requestAnimationFrame(ve)}
   requestAnimationFrame(ve);
   var fx=[].slice.call(document.querySelectorAll(".datas .faixa"));
   function rola(){if(calma)return;var y=scrollY;fx.forEach(function(f){var d=+f.getAttribute("data-dir");f.style.setProperty("--t",(d*((y*0.25)%900)-(d>0?900:0))+"px")})}
