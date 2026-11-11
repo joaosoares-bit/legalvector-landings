@@ -171,6 +171,22 @@ html.no-motion *{animation:none!important;transition:none!important}
 html.no-motion .del::after{transform:scaleX(1)}
 html.no-motion .ins{clip-path:none}
 html.no-motion .rise,html.no-motion .window{transform:none}
+.cover{--h:min(76vh,640px);--w:calc(var(--h) * .5625);position:relative;height:var(--h);margin-top:40px;touch-action:pan-y}
+.card{position:absolute;left:50%;top:0;width:var(--w);height:100%;margin-left:calc(var(--w) / -2);border-radius:22px;overflow:hidden;background:#0E1A19;cursor:pointer;
+  transform:translateX(var(--x,0)) scale(var(--s,1));filter:blur(var(--b,0));opacity:var(--o,1);z-index:var(--z,1);
+  transition:transform .7s cubic-bezier(.2,.8,.2,1),filter .7s,opacity .7s;box-shadow:0 34px 70px -30px rgba(14,26,25,.55)}
+.card video{width:100%;height:100%;object-fit:cover;display:block}
+.card.front{cursor:default}
+.sound{position:absolute;right:14px;bottom:14px;width:48px;height:48px;border-radius:50%;border:0;background:rgba(14,26,25,.62);color:#fff;display:grid;place-items:center;cursor:pointer;opacity:0;pointer-events:none;transition:opacity .3s,background-color .2s;backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px)}
+.card.front .sound{opacity:1;pointer-events:auto}
+.sound[aria-pressed="true"]{background:var(--teal);color:#fff}
+.sound .on{display:none}.sound[aria-pressed="true"] .on{display:block}.sound[aria-pressed="true"] .off{display:none}
+.cover-arrow{position:absolute;top:50%;z-index:20;width:52px;height:52px;margin-top:-26px;border-radius:50%;border:1px solid var(--line);background:#fff;color:var(--ink);display:grid;place-items:center;cursor:pointer;transition:transform .2s}
+.cover-arrow:hover{transform:scale(1.06)}
+.cover-arrow.prev{left:0}.cover-arrow.next{right:0}
+@media (max-width:760px){.cover{--h:min(68vh,560px)}.cover-arrow{width:44px;height:44px;margin-top:-22px}}
+html.no-motion .card{transition:none}
+.sr-only{position:absolute;width:1px;height:1px;margin:-1px;padding:0;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap;border:0}
 </style>
 <script>try{if(localStorage.getItem("lv-calm")==="1")document.documentElement.classList.add("no-motion")}catch(e){}</script>
 </head>
@@ -224,9 +240,13 @@ html.no-motion .rise,html.no-motion .window{transform:none}
 </div></div></section>
 
 <section class="films" aria-labelledby="t-films"><div class="w rise">
-  <div class="top"><div><h2 id="t-films">Watch it in 30 seconds.</h2><p class="l">Three short films, with sound and subtitles. Tap to play.</p></div>
-    <div class="arrows"><button type="button" aria-label="Previous" data-strip="-1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M15 6l-6 6 6 6"/></svg></button><button type="button" aria-label="Next" data-strip="1"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M9 6l6 6-6 6"/></svg></button></div></div>
-  <div class="strip" id="strip"><figure class="reel"><video controls playsinline preload="none" poster="../campaign/film/reel-deadlines.webp" data-reel="deadlines" aria-label="Reel: every key date on one screen" width="720" height="1280"><source src="../campaign/film/reel-deadlines.mp4" type="video/mp4"></video></figure><figure class="reel"><video controls playsinline preload="none" poster="../campaign/film/reel-intake.webp" data-reel="intake" aria-label="Reel: one front door to Legal" width="720" height="1280"><source src="../campaign/film/reel-intake.mp4" type="video/mp4"></video></figure><figure class="reel"><video controls playsinline preload="none" poster="../campaign/film/reel-review.webp" data-reel="review" aria-label="Reel: bring a contract, watch it get reviewed" width="720" height="1280"><source src="../campaign/film/reel-review.mp4" type="video/mp4"></video></figure></div>
+  <div class="top"><div><h2 id="t-films">Watch it in 30 seconds.</h2><p class="l">Three short films. They play on their own; tap the speaker for sound.</p></div></div>
+  <div class="cover" id="cover" aria-roledescription="carousel" aria-label="Product films">
+    <figure class="card" data-reel="deadlines"><video muted playsinline preload="none" poster="../campaign/film/reel-deadlines.webp" data-src="../campaign/film/reel-deadlines.mp4" aria-label="Reel: every key date on one screen" width="720" height="1280"></video><button type="button" class="sound" aria-pressed="false" aria-label="Turn sound on"><svg class="off" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5m0-5-5 5"/></svg><svg class="on" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button></figure><figure class="card" data-reel="intake"><video muted playsinline preload="none" poster="../campaign/film/reel-intake.webp" data-src="../campaign/film/reel-intake.mp4" aria-label="Reel: one front door to Legal" width="720" height="1280"></video><button type="button" class="sound" aria-pressed="false" aria-label="Turn sound on"><svg class="off" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5m0-5-5 5"/></svg><svg class="on" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button></figure><figure class="card" data-reel="review"><video muted playsinline preload="none" poster="../campaign/film/reel-review.webp" data-src="../campaign/film/reel-review.mp4" aria-label="Reel: bring a contract, watch it get reviewed" width="720" height="1280"></video><button type="button" class="sound" aria-pressed="false" aria-label="Turn sound on"><svg class="off" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="m16 9.5 5 5m0-5-5 5"/></svg><svg class="on" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M4 9.5h3.5L12 5.5v13l-4.5-4H4z"/><path d="M15.5 9a4 4 0 0 1 0 6M18 6.5a7.5 7.5 0 0 1 0 11"/></svg></button></figure>
+    <p class="sr-only" id="cover-now" aria-live="polite"></p>
+    <button type="button" class="cover-arrow prev" aria-label="Previous film" data-go="-1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 6l-6 6 6 6"/></svg></button>
+    <button type="button" class="cover-arrow next" aria-label="Next film" data-go="1"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+  </div>
 </div></section>
 
 <section class="faq" aria-labelledby="t-faq"><div class="w rise">
@@ -290,12 +310,31 @@ html.no-motion .rise,html.no-motion .window{transform:none}
     var io=new IntersectionObserver(function(x){x.forEach(function(i){if(i.isIntersecting){i.target.classList.add("seen");io.unobserve(i.target)}})},{rootMargin:"0px 0px -12% 0px"});
     document.querySelectorAll(".rise,.window").forEach(function(el){io.observe(el)});
   }else{document.querySelectorAll(".rise,.window").forEach(function(el){el.classList.add("seen")})}
-  var strip=document.getElementById("strip"),arrows=document.querySelectorAll("[data-strip]");
-  function ends(){var max=strip.scrollWidth-strip.clientWidth-2;arrows[0].disabled=strip.scrollLeft<=2;arrows[1].disabled=strip.scrollLeft>=max;document.querySelector(".arrows").hidden=max<=0}
-  arrows.forEach(function(b){b.addEventListener("click",function(){strip.scrollBy({left:+b.getAttribute("data-strip")*strip.clientWidth*.8,behavior:"smooth"})})});
-  strip.addEventListener("scroll",ends,{passive:true});addEventListener("resize",ends);ends();
-  var reels=[].slice.call(document.querySelectorAll("video[data-reel]"));reels.forEach(function(v){v.addEventListener("play",function(){reels.forEach(function(o){if(o!==v)o.pause()});track("reel_play",{reel:v.dataset.reel})})});
-  document.getElementById("calm").addEventListener("click",function(){var on=document.documentElement.classList.toggle("no-motion");try{localStorage.setItem("lv-calm",on?"1":"0")}catch(e){}});
+  
+  var cover=document.getElementById("cover"),cards=[].slice.call(cover.querySelectorAll(".card")),front=0,withSound=false,inView=false;
+  function vid(i){return cards[i].querySelector("video")}
+  function layout(){var n=cards.length,w=cards[0].offsetWidth,step=innerWidth<760?w*.46:w*.68;
+    cards.forEach(function(c,i){var rel=((i-front)%n+n)%n;if(rel>n/2)rel-=n;var a=Math.abs(rel);
+      c.style.setProperty("--x",(rel*step)+"px");c.style.setProperty("--s",a?.8:1);c.style.setProperty("--b",a?"5px":"0px");c.style.setProperty("--o",a?.55:1);c.style.setProperty("--z",String(10-a));
+      c.classList.toggle("front",!a);c.setAttribute("aria-hidden",a?"true":"false");c.querySelector(".sound").tabIndex=a?-1:0});}
+  function playFront(){cards.forEach(function(c,i){var v=vid(i);if(i!==front){v.pause();v.muted=true;return}
+      if(!v.getAttribute("src"))v.src=v.dataset.src;v.muted=!withSound;
+      if(inView&&document.visibilityState==="visible"&&!document.documentElement.classList.contains("no-motion")){var p=v.play();if(p)p.catch(function(){v.muted=true;withSound=false;mark();v.play().catch(function(){})})}else v.pause()});}
+  function mark(){cards.forEach(function(c){var b=c.querySelector(".sound");b.setAttribute("aria-pressed",String(withSound));b.setAttribute("aria-label",withSound?"Turn sound off":"Turn sound on")})}
+  function go(i){front=(i+cards.length)%cards.length;try{vid(front).currentTime=0}catch(e){}layout();document.getElementById("cover-now").textContent="Film "+(front+1)+" of "+cards.length+": "+vid(front).getAttribute("aria-label").replace(/^Reel: /,"");playFront();track("reel_view",{reel:cards[front].dataset.reel})}
+  cards.forEach(function(c,i){
+    c.addEventListener("click",function(e){if(e.target.closest(".sound"))return;if(i!==front)go(i)});
+    vid(i).addEventListener("ended",function(){if(i===front)go(front+1)});
+    c.querySelector(".sound").addEventListener("click",function(){withSound=!withSound;mark();var v=vid(front);v.muted=!withSound;if(v.paused)v.play().catch(function(){});track(withSound?"reel_sound_on":"reel_sound_off",{reel:c.dataset.reel})});
+  });
+  cover.querySelectorAll("[data-go]").forEach(function(b){b.addEventListener("click",function(){go(front+ +b.getAttribute("data-go"))})});
+  var x0=null;cover.addEventListener("touchstart",function(e){x0=e.touches[0].clientX},{passive:true});
+  cover.addEventListener("touchend",function(e){if(x0===null)return;var dx=e.changedTouches[0].clientX-x0;if(Math.abs(dx)>40)go(front+(dx<0?1:-1));x0=null},{passive:true});
+  cover.addEventListener("keydown",function(e){if(e.key==="ArrowRight")go(front+1);if(e.key==="ArrowLeft")go(front-1)});
+  if("IntersectionObserver" in window)new IntersectionObserver(function(x){inView=x[0].isIntersecting;playFront()},{threshold:.4}).observe(cover);else inView=true;
+  document.addEventListener("visibilitychange",playFront);addEventListener("resize",layout);
+  layout();mark();
+  document.getElementById("calm").addEventListener("click",function(){var on=document.documentElement.classList.toggle("no-motion");try{localStorage.setItem("lv-calm",on?"1":"0")}catch(e){}playFront()});
   var form=document.getElementById("form"),error=document.getElementById("error"),ok=document.getElementById("ok");
   form.addEventListener("submit",async function(e){e.preventDefault();
     if(!form.checkValidity()){error.hidden=false;var first=form.querySelector(":invalid");first&&first.focus();return}
